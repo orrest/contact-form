@@ -1,5 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@700&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --color-grey-900: #2a4144;
+  --color-grey-500: #86a2a5;
+  --color-green-600: #0c7d69;
+  --color-green-200: #e0f1e8;
+  --color-red: #d73c3c;
+
+  --text-heading: 32px;
+  --text-heading--line-height: 100%;
+  --text-heading--letter-spacing: -1px;
+  --text-heading--font-weight: 700;
+
+  --text-body-md-bold: 18px;
+  --text-body-md-bold--line-height: 150%;
+  --text-body-md-bold--letter-spacing: 0px;
+  --text-body-md-bold--font-weight: 700;
+
+  --text-body-md-regular: 18px;
+  --text-body-md-regular--line-height: 150%;
+  --text-body-md-regular--letter-spacing: 0px;
+  --text-body-md-regular--font-weight: 400;
+
+  --text-body-sm: 16px;
+  --text-body-sm--line-height: 150%;
+  --text-body-sm--letter-spacing: 0px;
+  --text-body-sm--font-weight: 400;
+}
 
 @layer base {
   /* Box sizing rules */
@@ -7,6 +37,7 @@
   *::before,
   *::after {
     box-sizing: border-box;
+    font-family: "Karla", sans-serif;
   }
 
   /* Prevent font size inflation */
