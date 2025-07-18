@@ -1,0 +1,49 @@
+@reference '../../styles.css';
+
+h1 {
+  @apply text-heading;
+}
+
+label {
+  @apply text-body-sm text-grey-900;
+
+  span {
+    @apply text-green-600;
+  }
+}
+
+.text-input {
+  @apply flex flex-col gap-2 w-full;
+}
+
+.radio-input {
+  @apply flex flex-col gap-4;
+}
+
+.checkbox-input {
+  @apply flex flex-row;
+
+  input[type="checkbox"],
+  label {
+    @apply px-4 hover:cursor-pointer;
+  }
+}
+
+.query {
+  @apply flex flex-row gap-3 text-body-md-regular border-[1px] rounded-lg border-grey-500 px-6 py-3 w-full hover:green-outline;
+
+  input[type="radio"],
+  label {
+    @apply hover:cursor-pointer;
+  }
+
+  &:has(input[type="radio"]:checked) {
+    @apply green-outline bg-green-200;
+  }
+}
+
+textarea,
+input[type="text"],
+input[type="email"] {
+  @apply text-body-md-regular border-[1px] rounded-lg px-6 py-3 border-grey-500 hover:green-outline hover:cursor-pointer focus:green-outline;
+}

@@ -1,0 +1,90 @@
+<article
+  class="bg-white p-6 flex flex-col gap-8 rounded-2xl md:max-w-[690px] xl:max-w-[736px] md:p-10 shadow-sm"
+>
+  <h1>Contact Us</h1>
+
+  <form
+    [formGroup]="form"
+    (ngSubmit)="onSubmit(form)"
+    class="flex flex-col gap-6"
+  >
+    <div class="flex flex-col gap-6 md:flex-row">
+      <fieldset class="text-input">
+        <label for="first-name">First Name <span>*</span></label>
+        <input
+          formControlName="firstName"
+          type="text"
+          id="first-name"
+          autocomplete="given-name"
+        />
+      </fieldset>
+
+      <fieldset class="text-input">
+        <label for="last-name">Last Name <span>*</span></label>
+        <input
+          formControlName="lastName"
+          type="text"
+          id="last-name"
+          autocomplete="family-name"
+        />
+      </fieldset>
+    </div>
+
+    <fieldset class="text-input">
+      <label for="email-addr"> Email Address <span>*</span> </label>
+      <input
+        formControlName="emailAddr"
+        type="email"
+        id="email-addr"
+        autocomplete="email"
+      />
+    </fieldset>
+
+    <fieldset class="radio-input">
+      <p>Query Type <span>*</span></p>
+      <div class="flex flex-col gap-4 md:flex-row">
+        <div class="query">
+          <input
+            formControlName="queryType"
+            type="radio"
+            id="general"
+            value="general"
+          />
+          <label for="general"> General Enquiry </label>
+        </div>
+        <div class="query">
+          <input
+            formControlName="queryType"
+            type="radio"
+            id="support"
+            value="support"
+          />
+          <label for="support">Support Request</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="text-input">
+      <label for="message">Message <span>*</span></label>
+      <textarea
+        id="message"
+        formControlName="message"
+        autocomplete="off"
+      ></textarea>
+    </fieldset>
+
+    <fieldset class="checkbox-input">
+      <input formControlName="agreement" type="checkbox" id="agreement" />
+      <label for="agreement">
+        I consent to being contacted by the team <span>*</span>
+      </label>
+    </fieldset>
+
+    <button
+      class="text-body-md-bold text-white bg-green-600 rounded-lg px-10 py-4 hover:cursor-pointer"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</article>
