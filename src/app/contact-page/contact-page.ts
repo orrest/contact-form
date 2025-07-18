@@ -28,7 +28,7 @@ export class ContactPage {
       emailAddr: ['', [Validators.required, Validators.email]],
       queryType: ['', [Validators.required]],
       message: ['', [Validators.required]],
-      agreement: [false, [Validators.required]],
+      agreement: [undefined, [Validators.required]],
     });
   }
 

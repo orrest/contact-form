@@ -95,9 +95,7 @@
           I consent to being contacted by the team <span>*</span>
         </label>
       </div>
-      @if (
-        form.get("agreement")?.value === false && form.get("agreement")?.touched
-      ) {
+      @if (isFieldInvalid("agreement")) {
         <p class="err">
           To submit this form, please consent to being contacted
         </p>
