@@ -1,5 +1,12 @@
 <main
-  class="flex flex-col items-center min-h-screen bg-green-200 px-4 py-8 md:py-32"
+  class="flex flex-col items-center min-h-screen bg-green-200 px-4 py-8 md:py-32 relative"
 >
+  @if (toast$ | async; as toast) {
+    <app-toast
+      class="absolute top-6"
+      [title]="toast.title"
+      [content]="toast.content"
+    ></app-toast>
+  }
   <router-outlet></router-outlet>
 </main>

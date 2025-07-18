@@ -5,6 +5,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { ToastService } from '../components/toast/toast-service';
 
 @Component({
   selector: 'app-contact-page',
@@ -14,6 +15,7 @@ import {
 })
 export class ContactPage {
   private fb = inject(FormBuilder);
+  private toastService = inject(ToastService);
 
   form: FormGroup;
 
@@ -45,9 +47,14 @@ export class ContactPage {
 
   onSubmit(form: FormGroup) {
     if (form.valid) {
-      // submit success
+      console.log(form.value);
+
+      this.toastService.nextMessage({
+        title: 'Message Sent!',
+        content: 'Thanks for completing the form. We’ll be in touch soon!',
+        delayInMs: 3000,
+      });
     } else {
-      // 将所有表单控件标记为 touched，以显示所有错误
       form.markAllAsTouched();
     }
   }
