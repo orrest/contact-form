@@ -47,3 +47,7 @@ input[type="text"],
 input[type="email"] {
   @apply text-body-md-regular border-[1px] rounded-lg px-6 py-3 border-grey-500 hover:green-outline hover:cursor-pointer focus:green-outline;
 }
+
+.err {
+  @apply text-body-sm text-red;
+}

@@ -17,6 +17,9 @@
           id="first-name"
           autocomplete="given-name"
         />
+        @if (isFieldInvalid("firstName")) {
+          <p class="err">{{ requiredErr }}</p>
+        }
       </fieldset>
 
       <fieldset class="text-input">
@@ -27,6 +30,9 @@
           id="last-name"
           autocomplete="family-name"
         />
+        @if (isFieldInvalid("lastName")) {
+          <p class="err">{{ requiredErr }}</p>
+        }
       </fieldset>
     </div>
 
@@ -38,6 +44,9 @@
         id="email-addr"
         autocomplete="email"
       />
+      @if (isFieldInvalid("emailAddr")) {
+        <p class="err">Please enter a valid email address</p>
+      }
     </fieldset>
 
     <fieldset class="radio-input">
@@ -62,6 +71,9 @@
           <label for="support">Support Request</label>
         </div>
       </div>
+      @if (isFieldInvalid("queryType")) {
+        <p class="err">Please select a query type</p>
+      }
     </fieldset>
 
     <fieldset class="text-input">
@@ -71,13 +83,25 @@
         formControlName="message"
         autocomplete="off"
       ></textarea>
+      @if (isFieldInvalid("message")) {
+        <p class="err">{{ requiredErr }}</p>
+      }
     </fieldset>
 
-    <fieldset class="checkbox-input">
-      <input formControlName="agreement" type="checkbox" id="agreement" />
-      <label for="agreement">
-        I consent to being contacted by the team <span>*</span>
-      </label>
+    <fieldset>
+      <div class="checkbox-input">
+        <input formControlName="agreement" type="checkbox" id="agreement" />
+        <label for="agreement">
+          I consent to being contacted by the team <span>*</span>
+        </label>
+      </div>
+      @if (
+        form.get("agreement")?.value === false && form.get("agreement")?.touched
+      ) {
+        <p class="err">
+          To submit this form, please consent to being contacted
+        </p>
+      }
     </fieldset>
 
     <button
