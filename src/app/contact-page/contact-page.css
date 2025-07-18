@@ -1,7 +1,7 @@
 @reference '../../styles.css';
 
 h1 {
-  @apply text-heading;
+  @apply text-heading text-grey-900;
 }
 
 label {
